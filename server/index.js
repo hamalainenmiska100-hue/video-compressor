@@ -527,7 +527,7 @@ app.get('/api/jobs/:id/meta', async (request, reply) => {
 });
 
 if (fs.existsSync(clientDist)) {
-  app.get('/*', async (request, reply) => {
+  app.setNotFoundHandler((request, reply) => {
     return reply.sendFile('index.html');
   });
 }
