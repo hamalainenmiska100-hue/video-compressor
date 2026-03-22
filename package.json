@@ -1,0 +1,17 @@
+{
+  "name": "video-compressor-app",
+  "private": true,
+  "version": "1.0.0",
+  "workspaces": [
+    "server",
+    "client"
+  ],
+  "scripts": {
+    "build": "npm run build -w client",
+    "start": "npm run start -w server",
+    "dev": "concurrently \"npm run dev -w client\" \"npm run dev -w server\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
